@@ -1,0 +1,2 @@
+<?php
+// Generous PHP-SDK
