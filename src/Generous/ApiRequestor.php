@@ -86,10 +86,11 @@ class Generous_ApiRequestor
 		}
 
 		$opts[CURLOPT_URL] = $absURL;
-	    $opts[CURLOPT_CONNECTTIMEOUT] = 30;
-	    $opts[CURLOPT_TIMEOUT] = 80;
-	    $opts[CURLOPT_RETURNTRANSFER] = true;
-	    $opts[CURLOPT_HTTPHEADER] = $headers;
+		$opts[CURLOPT_CONNECTTIMEOUT] = 30;
+		$opts[CURLOPT_TIMEOUT] = 80;
+		$opts[CURLOPT_RETURNTRANSFER] = true;
+		$opts[CURLOPT_HTTPHEADER] = $headers;
+		$opts[CURLOPT_SSL_VERIFYPEER] = 0;
 
 		curl_setopt_array($curl, $opts);
 
