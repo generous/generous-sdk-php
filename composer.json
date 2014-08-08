@@ -1,0 +1,18 @@
+{
+    "name": "generous/generous-sdk-php",
+    "description": "Generous SDK for PHP - Use Generous in your PHP project",
+    "keywords": [
+        "generous",
+        "sdk",
+        "php"
+    ],
+    "homepage": "https://genero.us/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Govaere",
+            "email": "matthew@genero.us",
+            "role": "Developer"
+        }
+    ]
+}
