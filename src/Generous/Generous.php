@@ -10,7 +10,7 @@ abstract class Generous
     public static $apiBaseUrl = 'https://api.genero.us';
     public static $apiBaseUrlVersion = 'v0';
 
-    const VERSION = '0.1.1';
+    const VERSION = '0.1.2';
 
     public static function getApiKey()
     {

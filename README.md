@@ -1,14 +1,14 @@
-Generous PHP SDK (v0.1.1)
+Generous SDK-PHP (v0.1.2)
 
 # Usage
 
 A simple custom request looks like:
 
 ```
-require_once('/path/to/generous-php-sdk/src/Generous.php');
+require_once('/path/to/generous-sdk-php/src/Generous.php');
 
 $slider_data = Generous::customRequest('GET', 'sliders/{SLIDER_ID}');
 
-print $slider_data['title'];
+print $slider_data['slider']['title'];
 
 ```

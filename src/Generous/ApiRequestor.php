@@ -26,7 +26,7 @@ class Generous_ApiRequestor
 
         $headers = array(
             'X-Generous-Client-User-Agent: ' . json_encode($user_agent),
-            'User-Agent: Generous/' . Generous::$apiBaseUrlVersion . ' PHP-SDK/' . Generous::VERSION
+            'User-Agent: Generous/' . Generous::$apiBaseUrlVersion . ' SDK-PHP/' . Generous::VERSION
         );
 
         if (isset(Generous::$apiVersion) && Generous::$apiVersion != null) {
