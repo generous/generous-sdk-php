@@ -89,7 +89,7 @@ class Generous_ApiRequestor
 
     private static function apiUrl($endpoints = '')
     {
-        $apiBaseUrl = Generous::$apiBaseUrl;
+        $apiBaseUrl = Generous::getBaseUrl();
 
         return $apiBaseUrl . $endpoints;
     }

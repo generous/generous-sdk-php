@@ -7,7 +7,7 @@ abstract class Generous
 
     public static $apiVersion;
 
-    public static $apiBaseUrl = 'http://api.genero.us';
+    public static $apiBaseUrl = 'https://api.genero.us';
     public static $apiBaseUrlVersion = 'v0';
 
     const VERSION = '0.1.1';
@@ -21,12 +21,9 @@ abstract class Generous
     {
         self::$apiKey = $apiKey;
 
-        if($apiKey != null)
-        {
+        if($apiKey != null) {
             self::$apiSecret = $apiSecret;
         }
-
-        self::setBaseUrl(self::$apiBaseUrl, self::$apiBaseUrlVersion);
     }
 
     public static function setApiVersion($apiVersion)
@@ -36,10 +33,13 @@ abstract class Generous
 
     public static function setBaseUrl($apiBaseUrl = null, $apiBaseUrlVersion = null)
     {
-        if($apiBaseUrl == null) $apiBaseUrl = self::$apiBaseUrl;
-        if($apiBaseUrlVersion != null) self::$apiBaseUrlVersion = $apiBaseUrlVersion;
+        if($apiBaseUrl !== null) self::$apiBaseUrl = $apiBaseUrl;
+        if($apiBaseUrlVersion !== null) self::$apiBaseUrlVersion = $apiBaseUrlVersion;
+    }
 
-        self::$apiBaseUrl = $apiBaseUrl . '/' . self::$apiBaseUrlVersion . '/';
+    public static function getBaseUrl()
+    {
+        return self::$apiBaseUrl . '/' . self::$apiBaseUrlVersion . '/';
     }
 
     public static function customRequest($method, $endpoints, $params = null)
