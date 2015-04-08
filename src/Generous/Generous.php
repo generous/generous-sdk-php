@@ -13,7 +13,7 @@ abstract class Generous
     public static $apiTimeout = 80;
     public static $apiConnectTimeout = 30;
 
-    const VERSION = '0.1.2';
+    const VERSION = '0.1.3';
 
     public static function getApiKey()
     {

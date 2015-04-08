@@ -1,4 +1,4 @@
-Generous SDK-PHP (v0.1.2)
+Generous SDK-PHP (v0.1.3)
 
 # Usage
 
