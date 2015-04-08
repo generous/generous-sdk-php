@@ -10,6 +10,9 @@ abstract class Generous
     public static $apiBaseUrl = 'https://api.genero.us';
     public static $apiBaseUrlVersion = 'v0';
 
+    public static $apiTimeout = 80;
+    public static $apiConnectTimeout = 30;
+
     const VERSION = '0.1.2';
 
     public static function getApiKey()
@@ -40,6 +43,12 @@ abstract class Generous
     public static function getBaseUrl()
     {
         return self::$apiBaseUrl . '/' . self::$apiBaseUrlVersion . '/';
+    }
+
+    public static function setTimeout($timeout = 80, $connectTimeout = 30)
+    {
+        self::$apiTimeout = $timeout;
+        self::$apiConnectTimeout = $connectTimeout;
     }
 
     public static function customRequest($method, $endpoints, $params = null)

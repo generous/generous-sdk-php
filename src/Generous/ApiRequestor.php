@@ -26,7 +26,7 @@ class Generous_ApiRequestor
 
         $headers = array(
             'X-Generous-Client-User-Agent: ' . json_encode($user_agent),
-            'User-Agent: Generous/' . Generous::$apiBaseUrlVersion . ' SDK-PHP/' . Generous::VERSION
+            'User-Agent: Generous/' . Generous::$apiBaseUrlVersion . ' PHP-SDK/' . Generous::VERSION
         );
 
         if (isset(Generous::$apiVersion) && Generous::$apiVersion != null) {
@@ -72,8 +72,8 @@ class Generous_ApiRequestor
         }
 
         $opts[CURLOPT_URL] = $absURL;
-        $opts[CURLOPT_CONNECTTIMEOUT] = 30;
-        $opts[CURLOPT_TIMEOUT] = 80;
+        $opts[CURLOPT_CONNECTTIMEOUT] = Generous::$apiConnectTimeout;
+        $opts[CURLOPT_TIMEOUT] = Generous::$apiTimeout;
         $opts[CURLOPT_RETURNTRANSFER] = true;
         $opts[CURLOPT_HTTPHEADER] = $headers;
         $opts[CURLOPT_SSL_VERIFYPEER] = 0;
@@ -89,7 +89,7 @@ class Generous_ApiRequestor
 
     private static function apiUrl($endpoints = '')
     {
-        $apiBaseUrl = Generous::getBaseUrl();
+        $apiBaseUrl = Generous::$apiBaseUrl;
 
         return $apiBaseUrl . $endpoints;
     }
